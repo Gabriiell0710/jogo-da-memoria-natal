@@ -92,3 +92,8 @@ header{
 .footer .reload img{
     width: 55px;
 }
+
+.swal2-actions .swal2-confirm{
+    background-color: rgb(3, 75, 46);
+    color: rgb(255, 255, 255);
+}
