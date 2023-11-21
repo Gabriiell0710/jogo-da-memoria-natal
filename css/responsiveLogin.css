@@ -1,0 +1,33 @@
+@media(min-width: 360px){
+    body{
+        background-image: url(../assets/img/background-login-mini.jpg);
+        background-size: cover;
+    }
+
+    .login-form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100vh;
+        justify-content: start;
+        padding-top: 120px;
+        
+    }
+}
+
+@media(min-width: 992px){
+    .login-form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100vh;
+        justify-content: center; 
+    }
+}
+
+@media(min-width: 1200px){
+    body{
+        background-image: url(../assets/img/background-login.jpg);
+        background-size: cover;
+    }
+}
