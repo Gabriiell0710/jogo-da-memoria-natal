@@ -23,6 +23,9 @@ const createElement = (tag, className) => {
 
 let firstCard = '';
 let secondCard = '';
+const click_sound = document.querySelector("#click");
+const error_sound = document.querySelector("#error");
+const hit_sound = document.querySelector("#hit");
 
 const checkEndGame = () => {
     const disabledCards = document.querySelectorAll('.disabled-card');
@@ -41,6 +44,8 @@ const checkCards = () => {
 
     if (firstCharacter === secondCharacter){
 
+        hit_sound.currentTime = 0;
+        hit_sound.play();
         firstCard.firstChild.classList.add('disabled-card');
         secondCard.firstChild.classList.add('disabled-card');
 
@@ -51,8 +56,10 @@ const checkCards = () => {
     }else {
 
         setTimeout (() =>  {
+            error_sound.currentTime = 0;
+            error_sound.play();
             firstCard.classList.remove('reveal-card');
-        secondCard.classList.remove('reveal-card');
+            secondCard.classList.remove('reveal-card');
 
          firstCard = '';
          secondCard = '';
@@ -71,11 +78,15 @@ const revealCard = ({ target }) => {
 
     if (firstCard === ''){
 
+        click_sound.currentTime = 0;
+        click_sound.play();
         target.parentNode.classList.add('reveal-card');
         firstCard = target.parentNode;
 
     } else if (secondCard === ''){
 
+        click_sound.currentTime = 0;
+        click_sound.play();
         target.parentNode.classList.add('reveal-card');
         secondCard = target.parentNode;
 
